@@ -13,14 +13,14 @@ import model.Formacion;
 @Service
 public class FormacionServiceImpl implements FormacionService {
 	@Value("${usuario}")
-	String user;
-	@Value("${pwd}")
-	String pass;
+	String usuario;
+	@Value("${clave}")
+	String clave;
 	
-	@Value("${admin.user}")
-	String userAdmin;
-	@Value("${admin.pass}")
-	String passAdmin;
+	@Value("${admin.usuario}")
+	String usuarioAdmin;
+	@Value("${admin.clave}")
+	String claveAdmin;
 	String url="http://localhost:8000/cursos/";
 	RestClient restClient;
 	public FormacionServiceImpl(RestClient restClient) { //inyección por constructor
@@ -32,7 +32,7 @@ public class FormacionServiceImpl implements FormacionService {
 		return Arrays.stream(restClient
 				.get()
 				.uri(url+"recuperartodos")
-				.header("Authorization", "Basic "+getBase64(user, pass))
+				.header("Authorization", "Basic "+getBase64(usuario, clave))
 				.retrieve()
 				.body(Formacion[].class)//Formacion[]
 			)//Stream<Formacion>
@@ -45,7 +45,7 @@ public class FormacionServiceImpl implements FormacionService {
 		restClient
 		.post()
 		.uri(url+"alta")
-		.header("Authorization", "Basic "+getBase64(userAdmin, passAdmin))
+		.header("Authorization", "Basic "+getBase64(usuarioAdmin, claveAdmin))
 		.contentType(MediaType.APPLICATION_JSON)
 		.body(formacion)
 		.retrieve()

@@ -20,15 +20,15 @@ public class SecurityConfig {
 		List<UserDetails> usuarios=List.of(
 				User.withUsername("user1")
 				.password("{noop}user1")
-				.roles("USERS")
+				.roles("USER")
 				.build(),
 				User.withUsername("user2")
 				.password("{noop}user2")
-				.roles("OPERATORS")
+				.roles("OPERATOR")
 				.build(),
 				User.withUsername("admin")
 				.password("{noop}admin")
-				.roles("USERS","ADMINS")
+				.roles("USER","ADMIN")
 				.build());
 		return new InMemoryUserDetailsManager(usuarios);
 	}

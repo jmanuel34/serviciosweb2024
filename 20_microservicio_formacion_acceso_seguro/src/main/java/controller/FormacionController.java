@@ -25,6 +25,7 @@ public class FormacionController {
 	
 	@GetMapping(value="consulta/{area}",produces=MediaType.APPLICATION_JSON_VALUE)
 	public List<Formacion> consultarPorArea(@PathVariable("area") String area){
+		System.out.println("Consulta: "+ area );
 		return formacionService.buscarPorArea(area);
 	}
 	@PostMapping(value="alta",consumes=MediaType.APPLICATION_JSON_VALUE)

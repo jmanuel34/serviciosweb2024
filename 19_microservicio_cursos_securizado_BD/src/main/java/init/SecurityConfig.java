@@ -31,9 +31,9 @@ public class SecurityConfig {
 		.authorizeHttpRequests(
 				aut->aut.requestMatchers(HttpMethod.GET, "/buscar/*").authenticated()
 				.requestMatchers(HttpMethod.GET, "/recuperartodos").authenticated()
-				.requestMatchers(HttpMethod.POST, "/alta").hasRole("ADMINS")
-				.requestMatchers(HttpMethod.DELETE, "/eliminar/*").hasAnyRole("ADMINS","OPERATORS")
-				.requestMatchers(HttpMethod.PUT, "/actualizar").hasAnyRole("OPERATORS")
+				.requestMatchers(HttpMethod.POST, "/alta").hasRole("ADMIN")
+				.requestMatchers(HttpMethod.DELETE, "/eliminar/*").hasAnyRole("ADMIN","OPERATOR")
+				.requestMatchers(HttpMethod.PUT, "/actualizar").hasAnyRole("OPERATOR")
 				.anyRequest().permitAll()
 				)
 		.httpBasic(Customizer.withDefaults());

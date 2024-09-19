@@ -8,7 +8,8 @@ import org.springframework.stereotype.Service;
 import model.Curso;
 @Service
 public class CursosServiceImpl implements CursosService {
-	private static List<Curso> cursos=new ArrayList<>(List.of(new Curso("Java 21","Programación",100,200),
+	private static List<Curso> cursos=new ArrayList<>(List.of(
+			new Curso("Java 21","Programación",100,200),
 			new Curso("Inglés","Idiomas",200,340),
 			new Curso("Francés","Idiomas",150,320),
 			new Curso("Python","Programación",60,110)
