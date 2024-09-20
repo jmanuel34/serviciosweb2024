@@ -1,17 +1,20 @@
 package init.service;
 
+import org.springframework.stereotype.Service;
+
 import init.dao.ClientesDao;
 import init.entities.Cliente;
 import init.model.ClienteDto;
 import init.utilidades.Mapeador;
-
+@Service
 public class ClientesServiceImpl implements ClientesService {
 	
 	ClientesDao dao;
 	Mapeador mapeador;
 	
-	public ClientesServiceImpl(ClientesDao dao) {
+	public ClientesServiceImpl(ClientesDao dao, Mapeador mapeador) {
 		this.dao=dao;
+		this.mapeador=mapeador;
 	}
 
 	@Override
