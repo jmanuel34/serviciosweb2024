@@ -32,11 +32,4 @@ public class ClientesController {
 		return valor;
 	}
 	
-	@GetMapping(value="autenticaruser/{usuario}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public ClienteDto autenticar(@PathVariable("usuario") String usuario) {
-		ClienteDto cliente = service.autenticar(usuario, usuario);
-		System.out.println("Cliente: "+ cliente.getUsuario());
-		return cliente;
-	}
-
 }
