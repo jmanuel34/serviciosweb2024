@@ -1,5 +1,7 @@
 package init.dao;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -13,5 +15,5 @@ public interface HotelesDao extends JpaRepository<Hotel, Integer> {
 	//*/
 	// Lista de hoteles por localización
 	@Query("select h from Hotel h where h.localizacion = ?1")
-	public Hotel buscarPorLocalizacion(String localizacion);
+	public List<Hotel> buscarPorLocalizacion(String localizacion);
 }
