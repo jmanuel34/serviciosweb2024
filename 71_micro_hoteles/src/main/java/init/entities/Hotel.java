@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 public class Hotel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int idHotel;
 	private String nombre;
 	private int categoria;
 	private double precio;
@@ -20,9 +20,9 @@ public class Hotel {
 
 	public Hotel() {}
 
-	public Hotel(int id, String nombre, int categoria, double precio, boolean disponible, String localizacion) {
+	public Hotel(int idHotel, String nombre, int categoria, double precio, boolean disponible, String localizacion) {
 		super();
-		this.id = id;
+		this.idHotel = idHotel;
 		this.nombre = nombre;
 		this.categoria = categoria;
 		this.precio = precio;
@@ -31,11 +31,11 @@ public class Hotel {
 	}
 
 	public int getId() {
-		return id;
+		return idHotel;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int idHotel) {
+		this.idHotel = idHotel;
 	}
 
 	public String getNombre() {
