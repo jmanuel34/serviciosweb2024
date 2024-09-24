@@ -1,5 +1,8 @@
 package init.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class HotelDto {
 	private int idHotel;
 	private String nombre;

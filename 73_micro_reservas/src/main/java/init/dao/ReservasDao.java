@@ -14,4 +14,5 @@ public interface ReservasDao extends JpaRepository<Reserva, Integer> {
 	
 	// Lista de reservas por cliente
 	//findByUsuario 
+	List<Reserva> findByUsuario(String usuario);
 }

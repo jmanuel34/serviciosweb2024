@@ -1,23 +1,23 @@
 package init.model;
 
-import init.entities.Hotel;
-import init.entities.Vuelo;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ReservaDto {
 	private int idReserva;
 	private String usuario;
-	private VueloDto vuelo;
-	private HotelDto hotel;
+	private VueloDto vueloDto;
+	private HotelDto hotelDto;
 	private double precio;
 	
 	public ReservaDto() {}
 
-	public ReservaDto(int idReserva, String usuario, VueloDto vuelo, HotelDto hotel, double precio) {
+	public ReservaDto(int idReserva, String usuario, VueloDto vueloDto, HotelDto hotelDto, double precio) {
 		super();
 		this.idReserva = idReserva;
 		this.usuario = usuario;
-		this.vuelo = vuelo;
-		this.hotel = hotel;
+		this.vueloDto = vueloDto;
+		this.hotelDto = hotelDto;
 		this.precio = precio;
 	}
 
@@ -37,20 +37,20 @@ public class ReservaDto {
 		this.usuario = usuario;
 	}
 
-	public VueloDto getVuelo() {
-		return vuelo;
+	public VueloDto getVueloDto() {
+		return vueloDto;
 	}
 
-	public void setVuelo(VueloDto vuelo) {
-		this.vuelo = vuelo;
+	public void setVueloDto(VueloDto vueloDto) {
+		this.vueloDto = vueloDto;
 	}
 
-	public HotelDto getHotel() {
-		return hotel;
+	public HotelDto getHotelDto() {
+		return hotelDto;
 	}
 
-	public void setHotel(HotelDto hotel) {
-		this.hotel = hotel;
+	public void setHotelDto(HotelDto hotelDto) {
+		this.hotelDto = hotelDto;
 	}
 
 	public double getPrecio() {
@@ -60,6 +60,6 @@ public class ReservaDto {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
-	
+
 	
 }

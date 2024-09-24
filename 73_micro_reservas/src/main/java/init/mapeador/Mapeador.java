@@ -1,3 +1,4 @@
+package init.mapeador;
 import org.springframework.stereotype.Component;
 
 import init.entities.Hotel;
