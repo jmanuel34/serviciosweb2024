@@ -18,14 +18,14 @@ public class Vuelo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idVuelo;
 	private String company;
-	private LocalDateTime fecha;
+	private String fecha;
 	private double precio;
 	private int plazas;
 	private String destino;
 	
 	public Vuelo() {}
 
-	public Vuelo(int idVuelo, String company, LocalDateTime fecha, double precio, int plazas, String destino) {
+	public Vuelo(int idVuelo, String company, String fecha, double precio, int plazas, String destino) {
 		super();
 		this.idVuelo = idVuelo;
 		this.company = company;
@@ -51,11 +51,11 @@ public class Vuelo {
 		this.company = company;
 	}
 
-	public LocalDateTime getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(LocalDateTime fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 
@@ -82,5 +82,6 @@ public class Vuelo {
 	public void setDestino(String destino) {
 		this.destino = destino;
 	}
+
 
 }

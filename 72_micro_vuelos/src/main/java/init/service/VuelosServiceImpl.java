@@ -25,8 +25,10 @@ public class VuelosServiceImpl implements VuelosService {
 //	Actualización de plazas a partir de identificador de vuelo y plazas reservadas
 	@Override
 	public boolean actualizar(int idVuelo, int plazas) {
-		Vuelo vuelo = vuelosDao.findByIdVueloAndPlazasGreaterThan(idVuelo, plazas);
-		if (vuelo !=null) {			
+		Vuelo vuelo;
+		Optional<Vuelo> vueloOpt = vuelosDao.findById(idVuelo);
+		if (vueloOpt.isPresent()) {			
+			vuelo = vueloOpt.get();
 			vuelo.setPlazas(plazas);
 			vuelosDao.save(vuelo);
 			return true;

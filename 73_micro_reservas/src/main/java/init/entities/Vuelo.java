@@ -1,20 +1,29 @@
-package init.model;
+package init.entities;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import org.springframework.stereotype.Component;
 
-public class VueloDto {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Component
+@Entity
+@Table(name="vuelos")
+public class Vuelo {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idVuelo;
 	private String company;
-	private LocalDate fecha;
+	private String fecha;
 	private double precio;
 	private int plazas;
 	private String destino;
 	
-	public VueloDto() {}
+	public Vuelo() {}
 
-
-	public VueloDto(int idVuelo, String company, LocalDate fecha, double precio, int plazas, String destino) {
+	public Vuelo(int idVuelo, String company, String fecha, double precio, int plazas, String destino) {
 		super();
 		this.idVuelo = idVuelo;
 		this.company = company;
@@ -40,11 +49,11 @@ public class VueloDto {
 		this.company = company;
 	}
 
-	public LocalDate getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(LocalDate fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 
@@ -71,5 +80,6 @@ public class VueloDto {
 	public void setDestino(String destino) {
 		this.destino = destino;
 	}
-	
+
+
 }

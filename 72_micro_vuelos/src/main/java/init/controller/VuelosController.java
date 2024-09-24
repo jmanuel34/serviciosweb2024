@@ -33,8 +33,10 @@ public class VuelosController {
 		return service.findById(idVuelo);
 	}
 	
-	@PutMapping(value="actualizar",consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value="actualizar", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void actualizarVuelo(@RequestBody Vuelo vuelo)  {
+		System.out.println("IdVuelo "+ vuelo.getIdVuelo() +"Plazas "+vuelo.getPlazas());
+
 		service.actualizar(vuelo.getIdVuelo(), vuelo.getPlazas());
 	}
 }

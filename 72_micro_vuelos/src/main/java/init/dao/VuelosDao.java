@@ -9,7 +9,7 @@ import init.entities.Vuelo;
 
 public interface VuelosDao extends JpaRepository<Vuelo, Integer> {
 //	Lista de vuelos a partir de un destino y número de plazas
-	@Query("select v from Vuelo v where v.idVuelo=?1 and v.plazas>?2")
+	@Query("select v from Vuelo v where v.destino=?1 and v.plazas>?2")
 	List<Vuelo> findByDestinoAndPlazas(String destino, int plazas);
 	
 //	Actualización de plazas a partir del identificador de vuelo y plazas reservadas

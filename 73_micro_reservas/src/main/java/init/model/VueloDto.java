@@ -1,20 +1,21 @@
 package init.model;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 public class VueloDto {
+
 	private int idVuelo;
 	private String company;
-	private LocalDate fecha;
+	private String fecha;
 	private double precio;
 	private int plazas;
 	private String destino;
-	
+
 	public VueloDto() {}
 
-
-	public VueloDto(int idVuelo, String company, LocalDate fecha, double precio, int plazas, String destino) {
+	public VueloDto(int idVuelo, String company, String fecha, double precio, int plazas, String destino) {
 		super();
 		this.idVuelo = idVuelo;
 		this.company = company;
@@ -40,11 +41,11 @@ public class VueloDto {
 		this.company = company;
 	}
 
-	public LocalDate getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(LocalDate fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 
@@ -71,5 +72,6 @@ public class VueloDto {
 	public void setDestino(String destino) {
 		this.destino = destino;
 	}
+	
 	
 }
