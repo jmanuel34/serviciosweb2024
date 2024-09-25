@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import init.entities.Reserva;
+import init.entities.Vuelo;
 
 public interface ReservasDao extends JpaRepository<Reserva, Integer> {
 
@@ -18,6 +19,7 @@ public interface ReservasDao extends JpaRepository<Reserva, Integer> {
 	List<Reserva> findByUsuario(String usuario);
 	
 	// Plazas disponibles para un vuelo
-//	@Query("select v from Vuelo v where r.vuelo.idVuelo=?1")
+	@Query("select v from Vuelo v where v.idVuelo=?1")
+	Vuelo findByIdVuelo (int idVuelo);
 	
 }
