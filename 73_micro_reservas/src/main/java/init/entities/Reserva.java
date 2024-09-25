@@ -19,9 +19,11 @@ public class Reserva {
 	private int idReserva;
 	private String usuario;
 	@ManyToOne()
-	@JoinColumn(name="vuelo", referencedColumnName="idVuelo")
+	// name es la FK, referencedColumnName es la clave de la tabla referenciada
+	@JoinColumn(name="vuelo", referencedColumnName="idvuelo")
 	private Vuelo vuelo;
 	@ManyToOne()
+	// name es la FK, referencedColumnName es la clave de la tabla referenciada
 	@JoinColumn(name="hotel", referencedColumnName="idHotel")
 	private Hotel hotel;
 	private double precio;

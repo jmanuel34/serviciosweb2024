@@ -22,9 +22,9 @@ public class ReservasController {
 	}
 	
 	@PostMapping(value="alta", consumes = MediaType.APPLICATION_JSON_VALUE,produces=MediaType.TEXT_PLAIN_VALUE)
-	public boolean alta(@RequestBody ReservaDto reservaDto) {
+	public String alta(@RequestBody ReservaDto reservaDto) {
 		System.out.println("Controller ReservaDto: " +reservaDto.getUsuario());
-		return service.alta(reservaDto);
+		return String.valueOf(service.alta(reservaDto));
 	}
 	
 	@GetMapping(value="reservasCliente/{cliente}", produces=MediaType.APPLICATION_JSON_VALUE)

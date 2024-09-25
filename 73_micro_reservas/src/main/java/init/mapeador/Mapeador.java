@@ -51,7 +51,15 @@ public class Mapeador {
 				reserva.getPrecio());
 	}
 	public Reserva dtoToReserva(ReservaDto reserva) {
-		return new Reserva(reserva.getIdReserva(),reserva.getUsuario(),
+		System.out.print("Id Reserva:" +reserva.getIdReserva()+" ");
+		System.out.print("Usuario:" +reserva.getUsuario()+" ");
+		System.out.print("Hotel:" +reserva.getHotelDto().getIdHotel()+" ");
+		System.out.print("Vuelo:" +reserva.getVueloDto().getCompany()+" ");
+		System.out.print("Precio:" +reserva.getPrecio()+" ");
+				
+		return new Reserva(
+				reserva.getIdReserva(),
+				reserva.getUsuario(),
 				dtoToVuelo(reserva.getVueloDto()),
 				dtoToHotel(reserva.getHotelDto()),
 				reserva.getPrecio());
