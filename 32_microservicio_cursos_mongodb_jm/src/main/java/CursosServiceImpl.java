@@ -39,7 +39,7 @@ public class CursosServiceImpl implements CursosService {
 
 	@Override
 	public boolean eliminarCurso(String curso) {
-		if (cursosDao.findByCurso(curso.getCurso()) == null) {
+		if (cursosDao.findByCurso(curso ) == null) {
 			return false;
 		}
 		cursosDao.delete(cursosDao.findByCurso(curso));
