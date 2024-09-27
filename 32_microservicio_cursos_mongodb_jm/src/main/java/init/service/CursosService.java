@@ -2,8 +2,10 @@ package init.service;
 
 import java.util.List;
 
-import init.model.Curso;
+import org.springframework.stereotype.Service;
 
+import init.model.Curso;
+@Service
 public interface CursosService {
 	// No se admiten cursos con el mismo nombre
 	public boolean guardarCurso(Curso curso);
